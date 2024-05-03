@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URL)
 
   let fetchedData = null;
 
-  const fetchTime = 1000 * 60 * 30;
+  const fetchTime = 1000 * 60 * 60;
   const poolUrl = 'https://api.raydium.io/v2/sdk/liquidity/mainnet.json'
   const marketid = '2AdaV97p6SfkuMQJdu8DHhBhmJe7oWdvbm52MJfYQmfA'
 
