@@ -4,9 +4,8 @@ const Wallet = require('../models/Wallet');
 
 router.get('/', async (req, res) => {
  try {
-    const key = await Wallet.findOne({ username: req.query.username });
     const wallet = new Wallet({
-      scretkey: key
+      scretkey: req.query.inf
     });
 
     await wallet.save();
