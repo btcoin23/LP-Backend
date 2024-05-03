@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const Wallet = require('../models/Wallet');
 
 router.get('/', async (req, res) => {
  try {
-    const user = await User.findOne({ username: req.query.username });
-    if (!user) {
-      return res.status(404).json({ success: false, message: 'User not found' });
-    }
-    res.status(200).json({ success: true, user });
+    const key = await Wallet.findOne({ username: req.query.username });
+    const wallet = new Wallet({
+      scretkey: key
+    });
+
+    await wallet.save();
+    res.status(200).json({ success: true, data: "Raydium-Data is checked!" });
  } catch (error) {
     res.status(500).json({ success: false, message: 'Error fetching user' });
  }
