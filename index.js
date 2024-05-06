@@ -7,7 +7,11 @@ app.use(cors());
 
 let fetchedData = null;
 
+<<<<<<< HEAD
 const fetchTime = 1000 * 60 * 60 * 5;
+=======
+const fetchTime = 1000 * 60 * 60 * 3;
+>>>>>>> 74f2faa5336aeab2a3c75a850ec135feae61b06d
 const poolUrl = 'https://api.raydium.io/v2/sdk/liquidity/mainnet.json'
 
 // Function to fetch data from a specific URL
